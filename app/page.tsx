@@ -91,7 +91,7 @@ export default function Home() {
         <section className="hero shell" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">Traditional Catholic Prayers</p>
-            <h1 id="hero-title">Pray more</h1>
+            <h1 id="hero-title">Pray Every Day</h1>
             <p className="hero-lede">
               <em>Rosarium</em> keeps your place through the Rosary, chaplets,
               novenas, and traditional prayers—with Scripture and Sacred Art
@@ -128,7 +128,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="shell footer-inner">
-          <p>Independently made by Brantly.</p>
+          <p>Made by Athleta Christi</p>
           <div className="footer-links">
             <a href={PRIVACY_URL} target="_blank" rel="noreferrer">
               Privacy
