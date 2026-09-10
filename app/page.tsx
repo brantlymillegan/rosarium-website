@@ -23,11 +23,6 @@ function DevicePreview({ device, image, alt, className = '' }: DevicePreviewProp
       ) : null}
       <div className="device-screen">
         <img src={image} alt={alt} />
-        {device === 'galaxy' ? (
-          <span className="device-status-time" aria-hidden="true">
-            12:53
-          </span>
-        ) : null}
       </div>
       {device === 'galaxy' ? <span className="device-camera" aria-hidden="true" /> : null}
     </div>
@@ -110,15 +105,15 @@ export default function Home() {
             <figure className="hero-device hero-device--iphone">
               <DevicePreview
                 device="iphone"
-                image="/images/iphone-scripture.webp"
+                image="/images/iphone-scripture-v1.webp"
                 alt="Rosarium on iPhone showing the Annunciation artwork, Scripture, and prayer beads"
               />
             </figure>
             <figure className="hero-device hero-device--galaxy">
               <DevicePreview
                 device="galaxy"
-                image="/images/galaxy-s26-home.webp"
-                alt="Rosarium for Android shown in a Samsung Galaxy S26 frame"
+                image="/images/android-home-v6.webp"
+                alt="Rosarium for Android showing its updated devotion library, search, and reminders in a Samsung Galaxy S26 frame"
               />
             </figure>
           </div>
