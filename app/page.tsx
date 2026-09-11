@@ -112,7 +112,7 @@ export default function Home() {
             <figure className="hero-device hero-device--galaxy">
               <DevicePreview
                 device="galaxy"
-                image="/images/android-home-v6.webp"
+                image="/images/android-home-2026-09-11.webp"
                 alt="Rosarium for Android showing its updated devotion library, search, and reminders in a Samsung Galaxy S26 frame"
               />
             </figure>
