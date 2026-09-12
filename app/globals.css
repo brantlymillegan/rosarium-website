@@ -602,6 +602,7 @@ a:focus-visible {
 }
 
 .hero-device--iphone {
+  cursor: not-allowed;
   z-index: 1;
   bottom: 18px;
   right: 4px;
