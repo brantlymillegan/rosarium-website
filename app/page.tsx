@@ -56,16 +56,14 @@ function StoreLinks() {
         <span>Free on Android</span>
       </div>
       <div className="store-block store-block--disabled">
-        <ComingSoonTooltip>
-          <span className="store-badge store-badge--apple" aria-disabled="true">
-            <img
-              src="/images/app-store-badge.svg"
-              alt="Download on the App Store"
-              width="120"
-              height="40"
-            />
-          </span>
-        </ComingSoonTooltip>
+        <span className="store-badge store-badge--apple" aria-disabled="true">
+          <img
+            src="/images/app-store-badge.svg"
+            alt="Download on the App Store"
+            width="120"
+            height="40"
+          />
+        </span>
         <span>Coming Soon</span>
       </div>
     </div>

@@ -384,7 +384,7 @@ a:focus-visible {
 }
 
 .store-badge--apple {
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .store-badge--apple img {
@@ -396,11 +396,6 @@ a:focus-visible {
 
 .dark .store-badge--apple img {
   opacity: 0.55;
-}
-
-.store-badge--apple:focus-visible {
-  outline: 3px solid var(--orange);
-  outline-offset: 4px;
 }
 
 .coming-soon-tooltip {
@@ -613,7 +608,7 @@ a:focus-visible {
 }
 
 .hero-device--iphone {
-  cursor: default;
+  cursor: not-allowed;
   z-index: 1;
   bottom: 18px;
   right: 4px;
