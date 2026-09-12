@@ -10,10 +10,11 @@ export const metadata: Metadata = {
   applicationName: 'Rosarium',
   icons: {
     icon: [
-      { url: '/favicon.ico', type: 'image/x-icon', sizes: '64x64' },
-      { url: '/images/rosarium-icon.png', type: 'image/png', sizes: '512x512' },
+      { url: '/favicon-circle.ico', type: 'image/x-icon', sizes: '16x16 32x32 48x48 64x64 128x128 256x256' },
+      { url: '/favicon-circle.png', type: 'image/png', sizes: '512x512' },
+      { url: '/favicon-circle.svg', type: 'image/svg+xml', sizes: 'any' },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/favicon-circle.ico',
     apple: '/images/rosarium-icon.png',
   },
   openGraph: {
