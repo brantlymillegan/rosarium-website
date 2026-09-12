@@ -100,20 +100,20 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="phone-stage" aria-label="Rosarium for iPhone and Android">
+          <div className="phone-stage" aria-label="Rosarium for Android and iPhone">
             <div className="stage-halo" aria-hidden="true" />
-            <figure className="hero-device hero-device--iphone">
-              <DevicePreview
-                device="iphone"
-                image="/images/iphone-scripture-v1.webp"
-                alt="Rosarium on iPhone showing the Annunciation artwork, Scripture, and prayer beads"
-              />
-            </figure>
             <figure className="hero-device hero-device--galaxy">
               <DevicePreview
                 device="galaxy"
                 image="/images/android-home-2026-09-11.webp"
                 alt="Rosarium for Android showing its updated devotion library, search, and reminders in a Samsung Galaxy S26 frame"
+              />
+            </figure>
+            <figure className="hero-device hero-device--iphone">
+              <DevicePreview
+                device="iphone"
+                image="/images/iphone-scripture-v1.webp"
+                alt="Rosarium on iPhone showing the Annunciation artwork, Scripture, and prayer beads"
               />
             </figure>
           </div>

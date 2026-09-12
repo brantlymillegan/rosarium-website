@@ -447,20 +447,20 @@ a:focus-visible {
 }
 
 .hero-device--iphone {
-  z-index: 1;
+  z-index: 2;
   bottom: 18px;
-  left: 4px;
+  right: 4px;
   width: 279px;
-  transform: rotate(-2.4deg);
+  transform: rotate(2.4deg);
   transform-origin: center bottom;
 }
 
 .hero-device--galaxy {
-  z-index: 2;
+  z-index: 1;
   bottom: 18px;
-  right: 4px;
+  left: 4px;
   width: 292px;
-  transform: rotate(2.4deg);
+  transform: rotate(-2.4deg);
   transform-origin: center bottom;
 }
 
@@ -570,12 +570,12 @@ a:focus-visible {
   }
 
   .hero-device--galaxy {
-    right: 1%;
+    left: 1%;
     width: min(51vw, 265px);
   }
 
   .hero-device--iphone {
-    left: 1%;
+    right: 1%;
     width: min(48.68vw, 253px);
   }
 
