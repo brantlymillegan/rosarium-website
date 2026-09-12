@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react';
 import ThemeToggle from './theme-toggle';
+import ComingSoonTooltip from './coming-soon-tooltip';
 
 const PLAY_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.brantly.rosarium';
@@ -55,14 +56,16 @@ function StoreLinks() {
         <span>Free on Android</span>
       </div>
       <div className="store-block store-block--disabled">
-        <span className="store-badge store-badge--apple" aria-disabled="true">
-          <img
-            src="/images/app-store-badge.svg"
-            alt="Download on the App Store"
-            width="120"
-            height="40"
-          />
-        </span>
+        <ComingSoonTooltip>
+          <span className="store-badge store-badge--apple" aria-disabled="true">
+            <img
+              src="/images/app-store-badge.svg"
+              alt="Download on the App Store"
+              width="120"
+              height="40"
+            />
+          </span>
+        </ComingSoonTooltip>
         <span>Coming Soon</span>
       </div>
     </div>
@@ -131,14 +134,16 @@ export default function Home() {
                 alt="Rosarium for Android showing its updated devotion library, search, and reminders in a Samsung Galaxy S26 frame"
               />
             </a>
-            <figure className="hero-device hero-device--iphone">
-              <DevicePreview
-                device="iphone"
-                image="/images/iphone-scripture-light-2026-09-12.webp"
-                darkImage="/images/iphone-scripture-dark-2026-09-12.webp"
-                alt="Rosarium on iPhone showing the Annunciation artwork, Scripture, and prayer beads"
-              />
-            </figure>
+            <ComingSoonTooltip>
+              <figure className="hero-device hero-device--iphone">
+                <DevicePreview
+                  device="iphone"
+                  image="/images/iphone-scripture-light-2026-09-12.webp"
+                  darkImage="/images/iphone-scripture-dark-2026-09-12.webp"
+                  alt="Rosarium on iPhone showing the Annunciation artwork, Scripture, and prayer beads"
+                />
+              </figure>
+            </ComingSoonTooltip>
           </div>
         </section>
 
