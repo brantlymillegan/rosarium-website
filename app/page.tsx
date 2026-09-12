@@ -113,13 +113,19 @@ export default function Home() {
 
           <div className="phone-stage" aria-label="Rosarium for Android and iPhone">
             <div className="stage-halo" aria-hidden="true" />
-            <figure className="hero-device hero-device--galaxy">
+            <a
+              className="hero-device hero-device--galaxy"
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get Rosarium on Google Play"
+            >
               <DevicePreview
                 device="galaxy"
                 image="/images/android-home-2026-09-11.webp"
                 alt="Rosarium for Android showing its updated devotion library, search, and reminders in a Samsung Galaxy S26 frame"
               />
-            </figure>
+            </a>
             <figure className="hero-device hero-device--iphone">
               <DevicePreview
                 device="iphone"

@@ -452,6 +452,29 @@ a:focus-visible {
 
 .hero-device > .device {
   width: 100%;
+  translate: 0 0;
+  scale: 1;
+  transition:
+    translate 180ms cubic-bezier(0.2, 0.7, 0.3, 1),
+    scale 180ms cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.hero-device:focus-visible {
+  outline: none;
+}
+
+.hero-device:focus-visible > .device {
+  outline: 3px solid var(--orange);
+  outline-offset: 6px;
+  translate: 0 -8px;
+  scale: 1.015;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-device:hover > .device {
+    translate: 0 -8px;
+    scale: 1.015;
+  }
 }
 
 .hero-device--iphone {
@@ -635,6 +658,12 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .hero-device:hover > .device,
+  .hero-device:focus-visible > .device {
+    translate: none;
+    scale: none;
   }
 
   *,
