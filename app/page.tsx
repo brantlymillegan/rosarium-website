@@ -149,7 +149,11 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="shell footer-inner">
-          <p>Made by Athleta Christi</p>
+          <p>
+            <a href="https://artesnobiles.com" target="_blank" rel="noopener noreferrer">
+              Made by Artes Nobiles
+            </a>
+          </p>
           <div className="footer-links">
             <a href={PRIVACY_URL} target="_blank" rel="noreferrer">
               Privacy

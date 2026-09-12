@@ -659,6 +659,7 @@ a:focus-visible {
   font-size: 0.82rem;
 }
 
+.footer-inner > p a:hover,
 .footer-links a:hover {
   color: var(--orange-light);
 }
