@@ -310,6 +310,7 @@ a:focus-visible {
   display: inline-flex;
   min-height: 42px;
   align-items: center;
+  gap: 8px;
   padding: 9px 17px;
   border: 1px solid rgb(24 77 112 / 15%);
   border-radius: 999px;
@@ -318,6 +319,13 @@ a:focus-visible {
   color: #4e5b64;
   font-size: 0.95rem;
   font-weight: 680;
+}
+
+.quiet-proof-check {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+  color: #21864a;
 }
 
 .phone-stage {

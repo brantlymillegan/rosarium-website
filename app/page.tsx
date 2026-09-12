@@ -1,3 +1,5 @@
+import { Check } from 'lucide-react';
+
 const PLAY_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.brantly.rosarium';
 
@@ -94,9 +96,18 @@ export default function Home() {
             </p>
             <StoreLinks />
             <div className="quiet-proof" aria-label="Key product qualities">
-              <span>Works offline</span>
-              <span>No account</span>
-              <span>No ads</span>
+              <span>
+                <Check className="quiet-proof-check" strokeWidth={3} aria-hidden="true" />
+                Works offline
+              </span>
+              <span>
+                <Check className="quiet-proof-check" strokeWidth={3} aria-hidden="true" />
+                No account
+              </span>
+              <span>
+                <Check className="quiet-proof-check" strokeWidth={3} aria-hidden="true" />
+                No ads
+              </span>
             </div>
           </div>
 
