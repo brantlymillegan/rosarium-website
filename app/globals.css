@@ -633,9 +633,9 @@ a:focus-visible {
 
 .site-footer {
   padding-block: 44px 29px;
-  border-top: 1px solid rgb(255 255 255 / 9%);
-  background: var(--blue-night);
-  color: var(--ivory);
+  border-top: 1px solid var(--header-border);
+  background: var(--background);
+  color: var(--text-secondary);
 }
 
 .footer-inner {
@@ -647,7 +647,7 @@ a:focus-visible {
 
 .footer-inner > p {
   margin: 0;
-  color: rgb(255 253 249 / 58%);
+  color: var(--text-caption);
   font-size: 0.8rem;
 }
 
@@ -655,13 +655,17 @@ a:focus-visible {
   display: flex;
   justify-content: flex-end;
   gap: 26px;
-  color: rgb(255 253 249 / 72%);
+  color: var(--text-secondary);
   font-size: 0.82rem;
 }
 
 .footer-inner > p a:hover,
 .footer-links a:hover {
-  color: var(--orange-light);
+  color: var(--orange);
+}
+
+.site-footer a:focus-visible {
+  outline-color: var(--orange);
 }
 
 @keyframes rise-in {
