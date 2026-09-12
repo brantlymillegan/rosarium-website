@@ -645,10 +645,24 @@ a:focus-visible {
   gap: 28px;
 }
 
-.footer-inner > p {
-  margin: 0;
-  color: var(--text-caption);
-  font-size: 0.8rem;
+.footer-maker {
+  display: block;
+  flex-shrink: 0;
+  width: 6rem;
+}
+
+.footer-maker img {
+  width: 100%;
+  height: auto;
+}
+
+.footer-maker .footer-maker-logo--dark,
+.dark .footer-maker .footer-maker-logo--light {
+  display: none;
+}
+
+.dark .footer-maker .footer-maker-logo--dark {
+  display: block;
 }
 
 .footer-links {
@@ -659,7 +673,6 @@ a:focus-visible {
   font-size: 0.82rem;
 }
 
-.footer-inner > p a:hover,
 .footer-links a:hover {
   color: var(--orange);
 }

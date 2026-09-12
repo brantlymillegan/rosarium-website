@@ -149,11 +149,28 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="shell footer-inner">
-          <p>
-            <a href="https://artesnobiles.com" target="_blank" rel="noopener noreferrer">
-              Made by Artes Nobiles
-            </a>
-          </p>
+          <a
+            className="footer-maker"
+            href="https://artesnobiles.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Artes Nobiles"
+          >
+            <img
+              className="footer-maker-logo--light"
+              src="/images/artes-nobiles-static-black.svg"
+              alt=""
+              width="1434"
+              height="1434"
+            />
+            <img
+              className="footer-maker-logo--dark"
+              src="/images/artes-nobiles-static-white.svg"
+              alt=""
+              width="1434"
+              height="1434"
+            />
+          </a>
           <div className="footer-links">
             <a href={PRIVACY_URL} target="_blank" rel="noreferrer">
               Privacy
