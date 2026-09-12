@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { themeInitializationScript } from './theme';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rosariumprayer.com'),
@@ -46,7 +47,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta id="theme-color" name="theme-color" content="#f6f4ef" />
+        <script dangerouslySetInnerHTML={{ __html: themeInitializationScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );

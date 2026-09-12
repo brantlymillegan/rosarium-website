@@ -47,7 +47,8 @@
 }
 
 :root {
-  --background: #ffffff;
+  color-scheme: light;
+  --background: #f6f4ef;
   --foreground: #1d2328;
   --card: #fffdf9;
   --card-foreground: #1d2328;
@@ -67,13 +68,26 @@
   --blue-night: #061f35;
   --orange: #b84e12;
   --orange-light: #ffb46a;
-  --parchment: #ffffff;
+  --parchment: #f6f4ef;
   --ivory: #fffdf9;
   --ink: #1d2328;
+  --heading: #082f4f;
+  --text-secondary: #4e5b64;
+  --text-caption: #626b72;
+  --text-disabled: #697177;
+  --header-background: rgb(246 244 239 / 88%);
+  --header-border: rgb(24 77 112 / 10%);
+  --pill-background: rgb(255 253 249 / 82%);
+  --pill-border: rgb(24 77 112 / 15%);
+  --check-green: #21864a;
+  --halo-inner: rgb(83 148 188 / 24%);
+  --halo-middle: rgb(122 180 213 / 14%);
+  --halo-outer: rgb(191 220 237 / 5%);
 }
 
 .dark {
-  --background: #11171c;
+  color-scheme: dark;
+  --background: #252a32;
   --foreground: #f9f5ed;
   --card: #1b232a;
   --card-foreground: #f9f5ed;
@@ -87,6 +101,22 @@
   --accent-foreground: #21150f;
   --border: rgb(255 255 255 / 12%);
   --ring: #ffb46a;
+  --parchment: #252a32;
+  --ink: #f9f5ed;
+  --heading: #e3f0f9;
+  --orange: #ffb46a;
+  --blue-night: #080f15;
+  --text-secondary: #bdc9d2;
+  --text-caption: #a9b6c0;
+  --text-disabled: #a9b6c0;
+  --header-background: rgb(37 42 50 / 90%);
+  --header-border: rgb(169 214 243 / 12%);
+  --pill-background: #1a2732;
+  --pill-border: #354b5b;
+  --check-green: #77d795;
+  --halo-inner: rgb(52 123 168 / 26%);
+  --halo-middle: rgb(34 78 111 / 16%);
+  --halo-outer: rgb(21 51 71 / 5%);
 }
 
 * {
@@ -128,9 +158,7 @@ a:focus-visible {
   min-height: 100dvh;
   flex-direction: column;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 8% 4%, rgb(255 255 255 / 85%), transparent 29rem),
-    var(--parchment);
+  background: var(--background);
 }
 
 .site-frame > main {
@@ -145,8 +173,8 @@ a:focus-visible {
 .site-header {
   position: relative;
   z-index: 20;
-  border-bottom: 1px solid rgb(24 77 112 / 10%);
-  background: rgb(255 255 255 / 88%);
+  border-bottom: 1px solid var(--header-border);
+  background: var(--header-background);
   backdrop-filter: blur(18px);
 }
 
@@ -156,6 +184,88 @@ a:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+}
+
+.theme-toggle {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.theme-trigger,
+.theme-option {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  padding: 0;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  background: transparent;
+  cursor: pointer;
+}
+
+.theme-trigger {
+  border: 1px solid var(--border);
+}
+
+.theme-trigger:hover,
+.theme-toggle.is-open .theme-trigger {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.theme-option:hover {
+  background: var(--secondary);
+  color: var(--foreground);
+}
+
+.theme-trigger:focus-visible,
+.theme-option:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+.theme-symbol {
+  width: 16px;
+  height: 16px;
+}
+
+.theme-menu-options {
+  position: absolute;
+  right: 43px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3px;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  box-shadow: 0 5px 18px rgb(0 0 0 / 10%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(5px);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
+}
+
+.theme-menu-options::after {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 100%;
+  content: '';
+}
+
+.theme-toggle.is-open .theme-menu-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
 }
 
 .brand {
@@ -215,7 +325,7 @@ a:focus-visible {
 
 .hero h1 {
   max-width: 700px;
-  color: var(--blue-deep);
+  color: var(--heading);
   font-size: clamp(2rem, 12cqi, 4.25rem);
   line-height: 0.98;
 }
@@ -223,7 +333,7 @@ a:focus-visible {
 .hero-lede {
   max-width: 630px;
   margin: 27px 0 24px;
-  color: #4e5b64;
+  color: var(--text-secondary);
   font-family: 'Roboto Rosarium', Arial, sans-serif;
   font-size: clamp(1.09rem, 1.65vw, 1.3rem);
   line-height: 1.65;
@@ -284,17 +394,21 @@ a:focus-visible {
   height: 100%;
 }
 
+.dark .store-badge--apple {
+  opacity: 0.55;
+}
+
 .store-block > span:last-child {
   width: 100%;
   margin-top: 6px;
-  color: #6b747a;
+  color: var(--text-caption);
   font-size: 0.77rem;
   letter-spacing: 0.02em;
   text-align: center;
 }
 
 .store-block--disabled > span:last-child {
-  color: #73797d;
+  color: var(--text-disabled);
   font-weight: 650;
 }
 
@@ -312,11 +426,11 @@ a:focus-visible {
   align-items: center;
   gap: 8px;
   padding: 9px 17px;
-  border: 1px solid rgb(24 77 112 / 15%);
+  border: 1px solid var(--pill-border);
   border-radius: 999px;
-  background: rgb(255 253 249 / 82%);
+  background: var(--pill-background);
   box-shadow: 0 5px 18px rgb(8 47 79 / 5%);
-  color: #4e5b64;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   font-weight: 680;
 }
@@ -325,7 +439,7 @@ a:focus-visible {
   width: 1.05rem;
   height: 1.05rem;
   flex-shrink: 0;
-  color: #21864a;
+  color: var(--check-green);
 }
 
 .phone-stage {
@@ -340,10 +454,10 @@ a:focus-visible {
   pointer-events: none;
   background: radial-gradient(
     ellipse at 52% 48%,
-    rgb(83 148 188 / 24%) 0%,
-    rgb(122 180 213 / 14%) 35%,
-    rgb(191 220 237 / 5%) 58%,
-    rgb(255 255 255 / 0%) 73%
+    var(--halo-inner) 0%,
+    var(--halo-middle) 35%,
+    var(--halo-outer) 58%,
+    transparent 73%
   );
 }
 
@@ -366,6 +480,16 @@ a:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Keep both native captures ready, switching with the page before hydration. */
+.device-screen .device-screen-dark,
+.dark .device-screen .device-screen-light {
+  display: none;
+}
+
+.dark .device-screen .device-screen-dark {
+  display: block;
 }
 
 .device--iphone {
@@ -613,6 +737,18 @@ a:focus-visible {
 }
 
 @media (max-width: 420px) {
+  .theme-menu-options {
+    top: calc(100% + 8px);
+    right: 0;
+  }
+
+  .theme-menu-options::after {
+    top: -10px;
+    right: 0;
+    width: 100%;
+    height: 10px;
+  }
+
   .eyebrow {
     line-height: 1.5;
   }

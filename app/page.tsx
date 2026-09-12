@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import ThemeToggle from './theme-toggle';
 
 const PLAY_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.brantly.rosarium';
@@ -8,11 +9,12 @@ const PRIVACY_URL = 'https://brantlymillegan.github.io/rosarium-privacy/';
 type DevicePreviewProps = {
   device: 'iphone' | 'galaxy';
   image: string;
+  darkImage: string;
   alt: string;
   className?: string;
 };
 
-function DevicePreview({ device, image, alt, className = '' }: DevicePreviewProps) {
+function DevicePreview({ device, image, darkImage, alt, className = '' }: DevicePreviewProps) {
   return (
     <div className={`device device--${device} ${className}`.trim()}>
       {device === 'galaxy' ? (
@@ -24,7 +26,8 @@ function DevicePreview({ device, image, alt, className = '' }: DevicePreviewProp
         />
       ) : null}
       <div className="device-screen">
-        <img src={image} alt={alt} />
+        <img className="device-screen-light" src={image} alt={alt} />
+        <img className="device-screen-dark" src={darkImage} alt={alt} />
       </div>
       {device === 'galaxy' ? <span className="device-camera" aria-hidden="true" /> : null}
     </div>
@@ -81,6 +84,7 @@ export default function Home() {
             />
             <span>Rosarium</span>
           </a>
+          <ThemeToggle />
         </div>
       </header>
 
@@ -123,13 +127,15 @@ export default function Home() {
               <DevicePreview
                 device="galaxy"
                 image="/images/android-home-2026-09-11.webp"
+                darkImage="/images/android-home-dark-2026-09-11.webp"
                 alt="Rosarium for Android showing its updated devotion library, search, and reminders in a Samsung Galaxy S26 frame"
               />
             </a>
             <figure className="hero-device hero-device--iphone">
               <DevicePreview
                 device="iphone"
-                image="/images/iphone-scripture-v1.webp"
+                image="/images/iphone-scripture-light-2026-09-12.webp"
+                darkImage="/images/iphone-scripture-dark-2026-09-12.webp"
                 alt="Rosarium on iPhone showing the Annunciation artwork, Scripture, and prayer beads"
               />
             </figure>
