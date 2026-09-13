@@ -37,7 +37,7 @@ export default function AppDemo({ storeUrl }: { storeUrl: string }) {
       video.autoplay = shouldPlay;
       // Only load the selected theme; reduced-motion visitors start with its poster.
       if (shouldPlay && !video.getAttribute('src')) {
-        video.src = `${VIDEO_DIRECTORY}/rosarium-galaxy-s26-${theme}-60fps.mp4`;
+        video.src = `${VIDEO_DIRECTORY}/rosarium-galaxy-s26-${theme}-60fps-transparent.webm`;
         video.load();
       }
       if (shouldPlay) {
@@ -100,9 +100,9 @@ export default function AppDemo({ storeUrl }: { storeUrl: string }) {
         <video
           ref={lightVideo}
           className="app-demo-video app-demo-video--light"
-          poster={`${VIDEO_DIRECTORY}/poster-light.jpg`}
-          width="600"
-          height="1200"
+          poster={`${VIDEO_DIRECTORY}/poster-light-transparent.png`}
+          width="520"
+          height="1074"
           muted
           loop
           playsInline
@@ -115,9 +115,9 @@ export default function AppDemo({ storeUrl }: { storeUrl: string }) {
         <video
           ref={darkVideo}
           className="app-demo-video app-demo-video--dark"
-          poster={`${VIDEO_DIRECTORY}/poster-dark.jpg`}
-          width="600"
-          height="1200"
+          poster={`${VIDEO_DIRECTORY}/poster-dark-transparent.png`}
+          width="520"
+          height="1074"
           muted
           loop
           playsInline

@@ -633,24 +633,30 @@ a:focus-visible {
 
 .app-demo {
   justify-self: center;
-  width: min(320px, 100%);
+  width: min(280px, 100%);
   text-align: center;
 }
 
 .app-demo-frame {
   display: block;
-  overflow: hidden;
-  border: 1px solid var(--header-border);
-  border-radius: 28px;
-  background: var(--background);
 }
 
 .app-demo-video {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 2;
+  aspect-ratio: 520 / 1074;
   object-fit: contain;
+  /* Use one silhouette mask in every browser, including VP9 decoders without alpha.
+     The opaque backing avoids multiplying native video alpha by the mask alpha. */
+  background: #000;
+  -webkit-mask-image: url('/videos/see-app-v6/poster-light-transparent.png');
+  mask-image: url('/videos/see-app-v6/poster-light-transparent.png');
+  mask-mode: alpha;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 .app-demo-video--dark,
@@ -771,10 +777,6 @@ a:focus-visible {
 }
 
 @media (max-width: 760px) {
-  .app-demo {
-    width: min(300px, 100%);
-  }
-
   .shell {
     width: min(100% - 32px, 680px);
   }
