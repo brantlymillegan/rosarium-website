@@ -415,7 +415,8 @@ a:focus-visible {
 
 .store-block--disabled > span:last-child {
   color: var(--text-disabled);
-  font-weight: 650;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .quiet-proof {

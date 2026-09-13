@@ -26,7 +26,6 @@ function StoreLinks() {
             height="166"
           />
         </a>
-        <span>Free on Android</span>
       </div>
       <div className="store-block store-block--disabled">
         <span className="store-badge store-badge--apple" aria-disabled="true">
