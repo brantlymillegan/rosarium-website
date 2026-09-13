@@ -36,7 +36,7 @@ function StoreLinks() {
             height="40"
           />
         </span>
-        <span>Coming Soon</span>
+        <span>COMING SOON</span>
       </div>
     </div>
   );
