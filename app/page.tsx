@@ -1,6 +1,7 @@
 import { Check } from 'lucide-react';
 import ThemeToggle from './theme-toggle';
 import ComingSoonTooltip from './coming-soon-tooltip';
+import FooterMaker from './footer-maker';
 
 const PLAY_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.brantly.rosarium';
@@ -149,28 +150,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="shell footer-inner">
-          <a
-            className="footer-maker"
-            href="https://artesnobiles.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Artes Nobiles"
-          >
-            <img
-              className="footer-maker-logo--light"
-              src="/images/artes-nobiles-static-black.svg"
-              alt=""
-              width="1434"
-              height="1434"
-            />
-            <img
-              className="footer-maker-logo--dark"
-              src="/images/artes-nobiles-static-white.svg"
-              alt=""
-              width="1434"
-              height="1434"
-            />
-          </a>
+          <FooterMaker />
           <div className="footer-links">
             <a href={PRIVACY_URL} target="_blank" rel="noreferrer">
               Privacy

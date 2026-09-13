@@ -656,6 +656,26 @@ a:focus-visible {
   height: auto;
 }
 
+.footer-maker-logo {
+  position: relative;
+  display: block;
+}
+
+.footer-maker-animation {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.footer-maker-logo[data-ready] > img {
+  visibility: hidden;
+}
+
+.footer-maker-logo[data-ready] > .footer-maker-animation {
+  visibility: visible;
+}
+
 .footer-maker .footer-maker-logo--dark,
 .dark .footer-maker .footer-maker-logo--light {
   display: none;
