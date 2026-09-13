@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 const VIDEO_DIRECTORY = '/videos/see-app-v6';
 
-export default function AppDemo() {
+export default function AppDemo({ storeUrl }: { storeUrl: string }) {
   const lightVideo = useRef<HTMLVideoElement>(null);
   const darkVideo = useRef<HTMLVideoElement>(null);
   const activeVideo = useRef<HTMLVideoElement | null>(null);
@@ -90,7 +90,13 @@ export default function AppDemo() {
 
   return (
     <div className="app-demo">
-      <div className="app-demo-frame">
+      <a
+        className="app-demo-frame"
+        href={storeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Get Rosarium on Google Play"
+      >
         <video
           ref={lightVideo}
           className="app-demo-video app-demo-video--light"
@@ -121,7 +127,7 @@ export default function AppDemo() {
           onPause={updatePlayback}
           onError={updatePlayback}
         />
-      </div>
+      </a>
       <Button
         type="button"
         className="app-demo-control"

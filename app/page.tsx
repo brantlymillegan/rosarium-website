@@ -1,6 +1,5 @@
 import { Check } from 'lucide-react';
 import ThemeToggle from './theme-toggle';
-import ComingSoonTooltip from './coming-soon-tooltip';
 import FooterMaker from './footer-maker';
 import AppDemo from './app-demo';
 
@@ -8,34 +7,6 @@ const PLAY_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.brantly.rosarium';
 
 const PRIVACY_URL = 'https://brantlymillegan.github.io/rosarium-privacy/';
-
-type DevicePreviewProps = {
-  device: 'iphone' | 'galaxy';
-  image: string;
-  darkImage: string;
-  alt: string;
-  className?: string;
-};
-
-function DevicePreview({ device, image, darkImage, alt, className = '' }: DevicePreviewProps) {
-  return (
-    <div className={`device device--${device} ${className}`.trim()}>
-      {device === 'galaxy' ? (
-        <img
-          className="device-hardware"
-          src="/images/galaxy-s26-frame.png"
-          alt=""
-          aria-hidden="true"
-        />
-      ) : null}
-      <div className="device-screen">
-        <img className="device-screen-light" src={image} alt={alt} />
-        <img className="device-screen-dark" src={darkImage} alt={alt} />
-      </div>
-      {device === 'galaxy' ? <span className="device-camera" aria-hidden="true" /> : null}
-    </div>
-  );
-}
 
 function StoreLinks() {
   return (
@@ -118,41 +89,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="phone-stage" aria-label="Rosarium for Android and iPhone">
-            <div className="stage-halo" aria-hidden="true" />
-            <a
-              className="hero-device hero-device--galaxy"
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get Rosarium on Google Play"
-            >
-              <DevicePreview
-                device="galaxy"
-                image="/images/android-home-2026-09-11.webp"
-                darkImage="/images/android-home-dark-2026-09-11.webp"
-                alt="Rosarium for Android showing its updated devotion library, search, and reminders in a Samsung Galaxy S26 frame"
-              />
-            </a>
-            <ComingSoonTooltip>
-              <figure className="hero-device hero-device--iphone">
-                <DevicePreview
-                  device="iphone"
-                  image="/images/iphone-scripture-light-2026-09-12.webp"
-                  darkImage="/images/iphone-scripture-dark-2026-09-12.webp"
-                  alt="Rosarium on iPhone showing the Annunciation artwork, Scripture, and prayer beads"
-                />
-              </figure>
-            </ComingSoonTooltip>
-          </div>
-        </section>
-
-        <section className="see-app shell" aria-labelledby="see-app-title">
-          <AppDemo />
-          <div className="see-app-copy">
-            <h2 id="see-app-title">See the App</h2>
-            <p>Star your favorite prayers, try new devotions.</p>
-          </div>
+          <AppDemo storeUrl={PLAY_STORE_URL} />
         </section>
       </main>
 
