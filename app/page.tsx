@@ -2,6 +2,7 @@ import { Check } from 'lucide-react';
 import ThemeToggle from './theme-toggle';
 import ComingSoonTooltip from './coming-soon-tooltip';
 import FooterMaker from './footer-maker';
+import AppDemo from './app-demo';
 
 const PLAY_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.brantly.rosarium';
@@ -146,6 +147,13 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="see-app shell" aria-labelledby="see-app-title">
+          <AppDemo />
+          <div className="see-app-copy">
+            <h2 id="see-app-title">See the App</h2>
+            <p>Star your favorite prayers, try new devotions.</p>
+          </div>
+        </section>
       </main>
 
       <footer className="site-footer">
