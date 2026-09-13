@@ -638,34 +638,61 @@ a:focus-visible {
   text-align: center;
 }
 
-.app-demo-frame {
+.app-demo-link {
   display: block;
 }
 
-.app-demo-video {
+.app-demo-frame {
   display: block;
+  position: relative;
   width: 100%;
-  height: auto;
-  aspect-ratio: 520 / 1074;
-  object-fit: contain;
-  /* Use one silhouette mask in every browser, including VP9 decoders without alpha.
-     The opaque backing avoids multiplying native video alpha by the mask alpha. */
-  background: #000;
-  -webkit-mask-image: url('/videos/see-app-v6/poster-light-transparent.png');
-  mask-image: url('/videos/see-app-v6/poster-light-transparent.png');
+  aspect-ratio: 519 / 1073;
+  overflow: hidden;
+  -webkit-mask-image: url('/videos/see-app-v6/poster-light-mp4.png');
+  mask-image: url('/videos/see-app-v6/poster-light-mp4.png');
   mask-mode: alpha;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
+  -webkit-mask-size: 100.192678% 100.093197%;
+  mask-size: 100.192678% 100.093197%;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
 
+.app-demo-video {
+  position: absolute;
+  max-width: none;
+  /* Match Artes Nobiles: remove only the 40px/63px export padding around
+     the 519×1073 phone, preserving the app's original screen proportions. */
+  width: 115.606936%;
+  height: 111.835974%;
+  left: -7.707129%;
+  top: -5.871389%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.app-demo-video.is-ready {
+  opacity: 1;
+}
+
+.app-demo-poster {
+  position: absolute;
+  max-width: none;
+  width: 100.192678%;
+  height: 100.093197%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.app-demo-poster--dark,
+.dark .app-demo-poster--light,
 .app-demo-video--dark,
 .dark .app-demo-video--light {
   display: none;
 }
 
-.dark .app-demo-video--dark {
+.dark .app-demo-video--dark,
+.dark .app-demo-poster--dark {
   display: block;
 }
 
